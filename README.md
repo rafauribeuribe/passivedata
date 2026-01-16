@@ -42,51 +42,104 @@ passivedata/
 3. **Cuenta de Azure** con permisos de administrador
 4. **App Registration en Azure AD**
 
-## 🚀 Configuración de Azure App Registration
+## 🪟 Instalación Rápida en Windows
 
-### Paso 1: Crear App Registration
+Si estás en **Windows 10/11**, sigue estos pasos simples:
 
-1. Ve a [Azure Portal](https://portal.azure.com)
-2. Navega a **Azure Active Directory** > **App registrations** > **New registration**
-3. Configura:
-   - **Name**: PassiveData Analyzer
-   - **Supported account types**: Accounts in this organizational directory only
-   - **Redirect URI**: Web - `http://localhost:8000/auth/callback`
+### 1. Instalar Prerequisitos
+- **Python 3.9+**: [Descargar aquí](https://www.python.org/downloads/) (marca "Add Python to PATH")
+- **Node.js 16+**: [Descargar aquí](https://nodejs.org/)
 
-### Paso 2: Configurar Permisos
+### 2. Ejecutar Script de Instalación
+Abre **Command Prompt** o **PowerShell** en la carpeta del proyecto:
 
-En tu App Registration, ve a **API permissions** y agrega:
+```cmd
+# Opción 1: Command Prompt
+setup.bat
 
-**Microsoft Graph - Delegated permissions:**
-- `User.Read` - Para leer perfil del usuario
-- `User.ReadBasic.All` - Para leer perfiles básicos de usuarios
-- `Mail.Read` - Para leer correos
-- `Calendars.Read` - Para leer calendarios
-- `Chat.Read` - Para leer chats de Teams
+# Opción 2: PowerShell
+.\setup.ps1
+```
 
-**IMPORTANTE**: Después de agregar permisos, haz clic en **Grant admin consent** para la organización.
+### 3. Configurar Azure
+Sigue la guía detallada en: **[AZURE_SETUP_ES.md](AZURE_SETUP_ES.md)**
 
-### Paso 3: Crear Client Secret
+### 4. Configurar Credenciales
+Edita el archivo `.env` con tus credenciales de Azure (Client ID, Client Secret, Tenant ID)
 
-1. Ve a **Certificates & secrets**
-2. Click **New client secret**
-3. Copia el valor del secret (solo se muestra una vez)
+### 5. Ejecutar la Aplicación
+```cmd
+# Opción 1: Command Prompt
+start.bat
 
-### Paso 4: Obtener IDs
+# Opción 2: PowerShell
+.\start.ps1
+```
 
-Copia estos valores de la página **Overview**:
-- **Application (client) ID**
-- **Directory (tenant) ID**
+🎉 La aplicación se abrirá automáticamente en `http://localhost:3000`
 
-## ⚙️ Instalación y Configuración
+📖 **Ver guía completa**: [WINDOWS_SETUP.md](WINDOWS_SETUP.md)
 
-### Backend Setup
+---
+
+## 🐧 Instalación en Linux/Mac
+
+### Instalación Rápida
 
 ```bash
-# Clonar el repositorio
-git clone <repository-url>
-cd passivedata
+# Ejecutar script de instalación
+chmod +x setup.sh
+./setup.sh
 
+# Configurar .env con credenciales de Azure
+cp .env.example .env
+nano .env
+
+# Ejecutar la aplicación
+chmod +x start.sh
+./start.sh
+```
+
+---
+
+## 🚀 Configuración de Azure App Registration
+
+📖 **Guía Detallada Paso a Paso (en Español)**: [AZURE_SETUP_ES.md](AZURE_SETUP_ES.md)
+
+### Resumen Rápido
+
+1. **Crear App Registration** en [Azure Portal](https://portal.azure.com)
+   - Nombre: `PassiveData Analyzer`
+   - Tipo: Solo cuentas de este directorio (Single tenant)
+   - Redirect URI: `http://localhost:8000/auth/callback`
+
+2. **Copiar Credenciales**:
+   - Application (client) ID → `MICROSOFT_CLIENT_ID`
+   - Directory (tenant) ID → `MICROSOFT_TENANT_ID`
+
+3. **Crear Client Secret** y copiarlo → `MICROSOFT_CLIENT_SECRET`
+
+4. **Agregar Permisos** (Microsoft Graph - Delegated):
+   - `User.Read` y `User.ReadBasic.All`
+   - `Mail.Read`
+   - `Calendars.Read`
+   - `Chat.Read` y `Chat.ReadBasic`
+
+5. **⚡ Conceder Consentimiento de Administrador** (¡MUY IMPORTANTE!)
+
+6. **Configurar `.env`** con las 3 credenciales copiadas
+
+⏱️ **Tiempo estimado**: 15-20 minutos
+
+---
+
+## ⚙️ Instalación Manual (Alternativa)
+
+Si prefieres instalar manualmente sin los scripts automáticos:
+
+### Backend
+
+```bash
 # Crear entorno virtual Python
 python -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
@@ -94,37 +147,27 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Configurar variables de entorno
+# Configurar .env
 cp .env.example .env
 # Editar .env con tus credenciales de Azure
 
-# Inicializar base de datos
-python -m backend.src.core.init_db
-
-# Ejecutar servidor de desarrollo
-uvicorn backend.main:app --reload
+# Ejecutar servidor
+cd backend
+uvicorn main:app --reload
 ```
 
-El backend estará disponible en `http://localhost:8000`
-
-### Frontend Setup
+### Frontend
 
 ```bash
-# Navegar al directorio frontend
-cd frontend
-
 # Instalar dependencias
+cd frontend
 npm install
 
-# Configurar variables de entorno
-cp .env.example .env.local
-# Editar .env.local si es necesario
-
-# Ejecutar servidor de desarrollo
+# Ejecutar servidor
 npm start
 ```
 
-El frontend estará disponible en `http://localhost:3000`
+---
 
 ## 📊 Uso
 

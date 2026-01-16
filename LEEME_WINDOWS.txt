@@ -1,0 +1,129 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                    PassiveData - Guía Rápida para Windows                   ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+¡Bienvenido! Esta es una guía rápida para instalar PassiveData en Windows.
+
+
+📋 PASO 1: INSTALAR PREREQUISITOS
+═══════════════════════════════════════════════════════════════════════════════
+
+Necesitas instalar Python y Node.js:
+
+1. Python 3.9 o superior
+   └─ Descargar: https://www.python.org/downloads/
+   └─ IMPORTANTE: Marca "Add Python to PATH" durante la instalación
+
+2. Node.js 16 o superior
+   └─ Descargar: https://nodejs.org/
+   └─ Descarga la versión LTS (recomendada)
+
+
+🔧 PASO 2: CONFIGURAR LA APLICACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+Abre Command Prompt (cmd) o PowerShell en esta carpeta y ejecuta:
+
+   Opción A - Command Prompt (cmd):
+   ────────────────────────────────
+   setup.bat
+
+   Opción B - PowerShell:
+   ──────────────────────
+   .\setup.ps1
+
+
+🔑 PASO 3: CONFIGURAR AZURE
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Abre el archivo: AZURE_SETUP_ES.md
+   └─ Sigue las instrucciones paso a paso
+   └─ Tiempo estimado: 15-20 minutos
+
+2. Al terminar, tendrás 3 credenciales:
+   ├─ Client ID
+   ├─ Client Secret
+   └─ Tenant ID
+
+3. Edita el archivo .env con tus credenciales:
+   └─ Abre .env con Notepad: notepad .env
+   └─ Pega las 3 credenciales en las líneas correspondientes
+   └─ Guarda el archivo (Ctrl + S)
+
+
+🚀 PASO 4: EJECUTAR LA APLICACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+Ejecuta uno de estos comandos:
+
+   Opción A - Command Prompt (cmd):
+   ────────────────────────────────
+   start.bat
+
+   Opción B - PowerShell:
+   ──────────────────────
+   .\start.ps1
+
+La aplicación se abrirá automáticamente en tu navegador:
+└─ http://localhost:3000
+
+
+🛑 PARA DETENER LA APLICACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+Ejecuta uno de estos comandos:
+
+   Opción A - Command Prompt (cmd):
+   ────────────────────────────────
+   stop.bat
+
+   Opción B - PowerShell:
+   ──────────────────────
+   .\stop.ps1
+
+O simplemente cierra las ventanas que se abrieron.
+
+
+📚 DOCUMENTACIÓN COMPLETA
+═══════════════════════════════════════════════════════════════════════════════
+
+├─ WINDOWS_SETUP.md       → Guía completa de instalación en Windows
+├─ AZURE_SETUP_ES.md      → Configuración de Azure (paso a paso)
+├─ README.md              → Documentación general del proyecto
+└─ DEPLOYMENT.md          → Guía de deployment para producción
+
+
+❓ SOLUCIÓN DE PROBLEMAS COMUNES
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Error: "Python no está instalado"
+   └─ Reinstala Python y marca "Add Python to PATH"
+
+2. Error: "Node.js no está instalado"
+   └─ Reinstala Node.js
+
+3. Error: "cannot be loaded because running scripts is disabled" (PowerShell)
+   └─ Ejecuta: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+4. Error: "Puerto ya en uso"
+   └─ Ejecuta stop.bat o stop.ps1 para detener procesos anteriores
+
+5. Error de autenticación con Microsoft
+   └─ Verifica que hayas concedido "consentimiento de administrador" en Azure
+
+Ver WINDOWS_SETUP.md para más soluciones.
+
+
+📧 CONTACTO Y AYUDA
+═══════════════════════════════════════════════════════════════════════════════
+
+Para más ayuda, consulta la documentación o contacta al equipo de desarrollo.
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                          ¡Disfruta PassiveData! 🎉                          ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
