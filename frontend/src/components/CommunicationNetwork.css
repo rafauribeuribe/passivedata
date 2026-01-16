@@ -1,0 +1,122 @@
+.communication-network {
+  width: 100%;
+}
+
+.network-header {
+  margin-bottom: 30px;
+}
+
+.network-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.filters-card {
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: #0078d4;
+}
+
+.network-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.connections-table {
+  overflow-x: auto;
+}
+
+.connections-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.connections-table thead {
+  background-color: #f8f9fa;
+}
+
+.connections-table th,
+.connections-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.connections-table th {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.connections-table td {
+  color: #555;
+}
+
+.connections-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.count-badge {
+  display: inline-block;
+  background-color: #0078d4;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.count-badge-meeting {
+  background-color: #106ebe;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .connections-table {
+    font-size: 14px;
+  }
+
+  .connections-table th,
+  .connections-table td {
+    padding: 8px 10px;
+  }
+}

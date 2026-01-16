@@ -1,0 +1,106 @@
+.data-extractor {
+  width: 100%;
+}
+
+.extractor-header {
+  margin-bottom: 30px;
+}
+
+.extractor-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.subtitle-text {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.extraction-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.extraction-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.extraction-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.extraction-icon {
+  font-size: 32px;
+}
+
+.extraction-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.extraction-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.extraction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.extract-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.info-card {
+  background-color: #e3f2fd;
+  border-left: 4px solid #0078d4;
+}
+
+.info-card h3 {
+  margin: 0 0 15px 0;
+  color: #0078d4;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-card li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.info-card strong {
+  color: #0078d4;
+}
+
+@media (max-width: 768px) {
+  .extraction-cards {
+    grid-template-columns: 1fr;
+  }
+}
