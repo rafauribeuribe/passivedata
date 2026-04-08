@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { logout, getStatus, getJobs } from '../api';
-import Stats from './Stats';
-import Extractor from './Extractor';
-import NetworkView from './NetworkView';
-import PairsTable from './PairsTable';
+import Stats from './Stats.jsx';
+import Extractor from './Extractor.jsx';
+import NetworkView from './NetworkView.jsx';
+import PairsTable from './PairsTable.jsx';
 
 const NAV = [
   { id: 'stats',   label: '📊 Estadísticas' },

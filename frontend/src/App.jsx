@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getStatus } from './api';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+import Login from './components/Login.jsx';
+import Dashboard from './components/Dashboard.jsx';
 
 export default function App() {
   const [auth, setAuth] = useState(null);   // { token, email, name }
